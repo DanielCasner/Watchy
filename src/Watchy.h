@@ -12,12 +12,19 @@
 #include "DSEG7_Classic_Bold_53.h"
 #include "BLE.h"
 #include "bma.h"
-#include "config.h"    
+#include "config.h"
 
 typedef struct weatherData{
     int8_t temperature;
     int16_t weatherConditionCode;
 }weatherData;
+
+enum GuiState {
+    WATCHFACE_STATE = -1,
+    MAIN_MENU_STATE =  0,
+    APP_STATE       =  1,
+    FW_UPDATE_STATE =  2,
+};
 
 class Watchy {
     public:
@@ -48,7 +55,7 @@ class Watchy {
         virtual void drawWatchFace(); //override this method for different watch faces
 
     private:
-        void _rtcConfig(String datetime);    
+        void _rtcConfig(String datetime);
         void _bmaConfig();
         static void _configModeCallback(WiFiManager *myWiFiManager);
         static uint16_t _readRegister(uint8_t address, uint8_t reg, uint8_t *data, uint16_t len);
