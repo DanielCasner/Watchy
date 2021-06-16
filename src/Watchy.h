@@ -38,7 +38,7 @@ class Watchy {
         float getBatteryVoltage();
         void vibMotor(uint8_t intervalMs = 100, uint8_t length = 20);
 
-        void handleButtonPress();
+        virtual void handleButtonPress();
         void showMenu(byte menuIndex, bool partialRefresh);
         void showFastMenu(byte menuIndex);
         void showBattery();
