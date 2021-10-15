@@ -16,7 +16,7 @@
 #include "ShowWifiScreen.h"
 #include "SyncTime.h"
 #include "SyncTimeScreen.h"
-#include "TimeScreen.h"
+#include "MainScreen.h"
 #include "UpdateFWScreen.h"
 #include "Watchy.h"
 #include "WatchyErrors.h"
@@ -44,7 +44,7 @@ MenuItem menuItems[] = {{"Set Time", &setTimeScreen},
 
 MenuScreen menu(menuItems, sizeof(menuItems) / sizeof(menuItems[0]));
 
-TimeScreen timeScreen;
+MainScreen timeScreen;
 WeatherScreen weatherScreen;
 IconScreen battery(&rle_battery, "battery", OptimaLTStd22pt7b);
 IconScreen steps(&rle_steps, "steps", OptimaLTStd22pt7b);
